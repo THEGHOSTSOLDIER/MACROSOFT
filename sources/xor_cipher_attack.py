@@ -1,3 +1,9 @@
+# find a XOR key with known-plaintext attack on a file encrypted with XOR cipher and a plain text file
+#
+# usage: python3 xor_cipher_attack.py <cipher_file> <plain_file>
+#
+# example: python3 xor_cipher_attack.py cipher.txt plain.txt
+
 import sys
 
 # known-plaintext attack on xor encryption
