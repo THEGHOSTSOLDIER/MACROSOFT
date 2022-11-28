@@ -130,3 +130,5 @@ pyinstaller --onefile ransomware.py
 
 ## B5 : Où se trouve le binaire créer ?
 Le binaire se trouve dans le dossier `/dist`.
+
+<a href="https://imgur.com/Tso2t0M"><img src="https://i.imgur.com/Tso2t0M.jpg" title="source: imgur.com" /></a>
