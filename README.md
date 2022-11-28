@@ -11,11 +11,27 @@ Le nom `Macrosoft` s'inspire d'une dérivée du nom de la société [Microsoft](
 ### Prérequis
 Ce projet nécessite a été développé pour un système Linux, ce qui veut dire que tous les systèmes d'exploitaion de cette famille sont compatibles. Il est cependant vivement conseillé d'utiliser [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu). Les instructions dans cette documentation ont été réalisées pour ce dernier.
 
+La présence de Python 3 est requis pour lancer le programme. Pour vérifier si Python 3 est installé sur votre machine, ouvrez un terminal et tapez la commande suivante :
+```bash
+python3 --version
+```
+
 L'installation de [Docker](https://en.wikipedia.org/wiki/Docker_(software)) est nécessaire pour pouvoir utiliser correctement les scripts, et surtout, de manière sécurisée.
 Ci dessous la commande à entrer dans un terminal pour l'installer :
 
 ```bash
 sudo apt install docker-compose
+```
+
+### Notes concernant la créattion d'un fichier exécutable à l'aide de PyInstaller
+
+Si vous essayez de créer un fichier exécutable à l'aide de PyInstaller, vous pouvez rencontrer les problèmes suivants :
+
+- `version 'GLIBC_2.31' not found'` : Ce problème est dû au fait que vous posséder une verion trop récente de Ubuntu. Pour résoudre ce problème, vous devez installer une version plus ancienne de Ubuntu, par exemple Ubuntu 20.04.1 LTS (qui contient GLIBC_2.31). Vous pouvez télécharger cette version [ici](https://ubuntu.com/download/desktop). Les versions supérieures à Ubuntu 20.04.1 LTS ne sont pas compatibles avec PyInstaller pour ce projet.
+- `Error while setting up cryptography: __init__() missing 1 required positional argument: 'backend'` : Ceci estdû à un problème de version avec la librairie `cryptography`. Pour résoudre ce problème, vous devez mettre à jour `cryptography` vers une version plus récente en entrant la commande suivante dans un terminal :
+    
+```bash
+pip install cryptography --upgrade
 ```
 
 ### Avertissement et clause de non-responsabilité
