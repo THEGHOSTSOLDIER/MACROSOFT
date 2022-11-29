@@ -207,6 +207,6 @@ Le binaire se trouve dans le dossier `/dist`.
 
 ## Credits
 
-> Copyright (c) 2022 THEGHOSTSOLDIER
+> Copyright (c) 2022 THEGHOSTSOLDIER, [Spartan Conseil](https://www.spartan-conseil.fr/)
 
 <a href="https://imgur.com/Tso2t0M"><img src="https://i.imgur.com/Tso2t0M.jpg" title="source: imgur.com" /></a>
