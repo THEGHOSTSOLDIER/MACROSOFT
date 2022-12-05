@@ -24,7 +24,7 @@ Ci dessous la commande à entrer dans un terminal pour l'installer :
 sudo apt install docker-compose
 ```
 
-### Notes concernant la créattion d'un fichier exécutable à l'aide de PyInstaller
+### Notes concernant la création d'un fichier exécutable à l'aide de PyInstaller
 
 Si vous essayez de créer un fichier exécutable à l'aide de PyInstaller, vous pouvez rencontrer les problèmes suivants :
 
