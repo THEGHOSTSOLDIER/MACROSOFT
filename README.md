@@ -4,7 +4,7 @@
 [![x64](https://img.shields.io/badge/arch-x64-red.svg?style=plastic)](https://en.wikipedia.org/wiki/X86-64)
 [![License](https://img.shields.io/github/license/THEGHOSTSOLDIER/MACROSOFT.svg?style=plastic)](LICENSE)
 
-Ce projet de cybersécurité a pour but de créer un [ransomware](https://en.wikipedia.org/wiki/Ransomware) qui va chiffrer tous les fichiers `.txt` d'un utilisateur cible (extension modifiable), envoie la clé de chiffrement sur le serveur distant de l'attaquant, ainsi qu'une copie des données de la victime afin de pouvoir négocier efficacement si elle a réalisée un backup.
+Ce projet de cybersécurité a pour but de créer un [ransomware](https://en.wikipedia.org/wiki/Ransomware) qui va chiffrer tous les fichiers `.txt` d'un utilisateur cible (extension modifiable), puis envoyer la clé de chiffrement sur le serveur distant de l'attaquant, ainsi qu'une copie des données. Même si la victime a réalisé un backup de ses fichiers, il sera possible de négocier une rançon avec elle pour ne pas les divulguer.
 Le nom `Macrosoft` s'inspire d'une dérivée du nom de la société [Microsoft](https://en.wikipedia.org/wiki/Microsoft) présente dans le célèbre jeu de hacking [Hacknet](https://en.wikipedia.org/wiki/Hacknet).
 
 ## Installation
